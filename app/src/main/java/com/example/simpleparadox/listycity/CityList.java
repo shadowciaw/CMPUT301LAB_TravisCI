@@ -77,4 +77,17 @@ public class CityList {
     public int countCities() {
         return cities.size();
     }
+
+    public void rename(City city, String newName) {
+        if (!hasCity(city)) {
+            throw new IllegalArgumentException();
+        }
+
+        for (City c : cities) {
+            if (c.compareTo(city) == 0){
+                c.setCity(newName);
+                break;
+            }
+        }
+    }
 }
